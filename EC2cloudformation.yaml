@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation Template for WebServer with Security Group and EC2 Instance
+
+Resources:
+  WebServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow HTTP access via my IP address
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      KeyName: Linux-CloudFormation
+      ImageId: ami-0360c520857e3138f # <-- Replace with valid AMI in your region
+      SecurityGroupIds:
+        - !Ref WebServerSecurityGroup
+      Tags:
+        - Key: Name
+          Value: CloudFormation-EC2
