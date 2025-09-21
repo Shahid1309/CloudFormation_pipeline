@@ -22,4 +22,4 @@ Resources:
         - !Ref WebServerSecurityGroup
       Tags:
         - Key: Name
-          Value: CloudFormation-EC2
+          Value: aws_codepipeline
