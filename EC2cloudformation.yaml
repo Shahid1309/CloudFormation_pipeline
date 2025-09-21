@@ -16,7 +16,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.micro
-      KeyName: Linux-CloudFormation
+      KeyName: user-alex-key-pair
       ImageId: ami-0360c520857e3138f 
       SecurityGroupIds:
         - !Ref WebServerSecurityGroup
