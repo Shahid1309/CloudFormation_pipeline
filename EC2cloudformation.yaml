@@ -17,7 +17,7 @@ Resources:
     Properties:
       InstanceType: t2.micro
       KeyName: Linux-CloudFormation
-      ImageId: ami-0360c520857e3138f # <-- Replace with valid AMI in your region
+      ImageId: ami-0360c520857e3138f 
       SecurityGroupIds:
         - !Ref WebServerSecurityGroup
       Tags:
